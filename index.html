@@ -101,85 +101,32 @@
     <div class="about-text">
       <div class="section-label">Our Mission</div>
       <h2 class="section-title">Leveling the playing field, one Dreamer at a time.</h2>
-      <p class="section-body">For immigrants, acclimating to a new country is already a monumental challenge — a new language, new culture, new social codes. For the 510,000 undocumented students currently enrolled in the U.S. education system, that challenge extends into their professional lives too.</p>
-      <br>
-      <p class="section-body">Dreamers graduate with their degrees every year, but then face a question most graduates never have to ask: <em>what now?</em> The UndocuStudent Resource Portal exists to answer that question.</p>
+      <p class="section-body">For the 510,000 undocumented students currently enrolled in the U.S. education system, challenges extend into their professional lives too. Dreamers graduate every year, but then face a question most graduates never have to ask: <em>what now?</em></p>
     </div>
   </section>
 
   <section id="how" class="fade-up">
     <div class="how-header">
       <div class="section-label">How It Works</div>
-      <h2 class="section-title">Three steps to your<br>personalized roadmap.</h2>
+      <h2 class="section-title">Three steps to your roadmap.</h2>
     </div>
     <div class="steps-grid">
       <div class="step">
         <div class="step-num">01</div>
-        <div class="step-icon">📋</div>
-        <h3>Answer the Questionnaire</h3>
-        <p>A short, confidential quiz asking about your situation. No accounts required.</p>
+        <h3>Answer</h3>
+        <p>A short, confidential quiz. No accounts required.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <div class="step-icon">⚙️</div>
-        <h3>We Match Your Profile</h3>
-        <p>Our system cross-references your answers with a curated database of vetted resources.</p>
+        <h3>Match</h3>
+        <p>We cross-reference your profile with vetted resources.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
-        <div class="step-icon">🗺️</div>
-        <h3>Get Your Roadmap</h3>
-        <p>A clean, personalized dashboard with links to apply and find legal aid near you.</p>
+        <h3>Navigate</h3>
+        <p>A personalized roadmap with legal aid and aid opportunities.</p>
       </div>
     </div>
-  </section>
-
-  <section id="resources" class="fade-up">
-    <div class="section-label">What We Offer</div>
-    <h2 class="section-title">Resources built for<br>your reality.</h2>
-    <div class="resources-grid">
-      <div class="resource-card">
-        <div class="resource-icon">🎓</div>
-        <h4>Scholarships</h4>
-        <p>Status-friendly scholarships — no SSN required.</p>
-        <span class="tag">Financial Aid</span>
-      </div>
-      <div class="resource-card">
-        <div class="resource-icon">💼</div>
-        <h4>Internships</h4>
-        <p>Employers who explicitly welcome undocumented applicants.</p>
-        <span class="tag">Career Growth</span>
-      </div>
-      <div class="resource-card">
-        <div class="resource-icon">🤝</div>
-        <h4>Mentors</h4>
-        <p>Connect with professionals who've walked the same road.</p>
-        <span class="tag">Community</span>
-      </div>
-      <div class="resource-card">
-        <div class="resource-icon">⚖️</div>
-        <h4>Legal Aid</h4>
-        <p>Nonprofits offering free or low-cost consultations.</p>
-        <span class="tag">Legal Support</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="stories" class="fade-up">
-    <div class="section-label">Dreamer Stories</div>
-    <h2 class="section-title">They found their path.<br>So can you.</h2>
-    <div class="stories-grid">
-      <div class="story-card">
-        <p class="story-text">"I came here at 7 years old and never knew there were scholarships I actually qualified for. I'm now a first-year law student."</p>
-        <div class="story-author">
-          <div class="story-avatar" style="background:#C9724F20;color:#C9724F">M</div>
-          <div class="story-author-info">
-            <div class="name">María G.</div>
-            <div class="detail">Law Student · Chicago, IL</div>
-          </div>
-        </div>
-      </div>
-      </div>
   </section>
 
   <section id="cta-section" class="fade-up">
@@ -189,9 +136,7 @@
   </section>
 
   <footer>
-    <div>
-      <div class="footer-logo">Undocu<span>Student</span></div>
-    </div>
+    <div class="footer-logo">Undocu<span>Student</span></div>
     <div class="footer-links">
       <a href="#">Privacy</a>
       <a href="#">Contact</a>
@@ -205,60 +150,94 @@
   <div class="quiz-container">
     <button class="quiz-back" onclick="showMain()">← Back to Home</button>
     <div class="quiz-progress-bar">
-      <div class="quiz-progress-fill" id="progressFill" style="width:20%"></div>
+      <div class="quiz-progress-fill" id="progressFill"></div>
     </div>
 
     <div class="quiz-step active" id="step1">
       <div class="quiz-step-num">Question 1 of 5</div>
       <h2>What's your field of interest?</h2>
-      <div class="option-grid">
-        <button class="option-btn" onclick="select(this,'field','Technology')"><span class="opt-icon">💻</span>Technology</button>
-        <button class="option-btn" onclick="select(this,'field','Healthcare')"><span class="opt-icon">🏥</span>Healthcare</button>
-        <button class="option-btn" onclick="select(this,'field','Law & Policy')"><span class="opt-icon">⚖️</span>Law &amp; Policy</button>
-        <button class="option-btn" onclick="select(this,'field','Business & Finance')"><span class="opt-icon">📈</span>Business &amp; Finance</button>
+      <div class="select-wrapper">
+        <select class="quiz-select" id="fieldSelect" onchange="answers.field = this.value">
+          <option value="" disabled selected>Choose a field…</option>
+          <optgroup label="STEM">
+            <option value="Technology">Technology &amp; Computer Science</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Life Sciences">Life Sciences &amp; Biology</option>
+          </optgroup>
+          <optgroup label="Health &amp; Medicine">
+            <option value="Healthcare">Healthcare &amp; Nursing</option>
+            <option value="Medicine">Medicine &amp; Pre-Med</option>
+          </optgroup>
+          <optgroup label="Social Sciences &amp; Humanities">
+            <option value="Law & Policy">Law &amp; Policy</option>
+            <option value="Education">Education &amp; Teaching</option>
+          </optgroup>
+          <optgroup label="Business &amp; Finance">
+            <option value="Business & Finance">Business &amp; Finance</option>
+            <option value="Entrepreneurship">Entrepreneurship</option>
+          </optgroup>
+          <option value="Other">Other / Undecided</option>
+        </select>
+        <span class="select-arrow">▾</span>
       </div>
       <div class="quiz-nav">
         <span></span>
-        <button class="quiz-next" onclick="nextStep(2)">Continue →</button>
+        <button class="quiz-next" onclick="goNext(2, 'field', answers.field)">Continue →</button>
       </div>
     </div>
 
     <div class="quiz-step" id="step2">
       <div class="quiz-step-num">Question 2 of 5</div>
       <h2>Where are you located?</h2>
-      <input class="quiz-input" type="text" id="locationInput" placeholder="City, State" oninput="answers.location = this.value" />
+      <div class="typeahead-wrapper">
+        <input class="quiz-input" type="text" id="locationInput" placeholder="e.g. Chicago, IL" autocomplete="off" oninput="handleLocationInput(this.value)" onkeydown="handleLocationKey(event)" />
+        <ul class="typeahead-list" id="typeaheadList"></ul>
+      </div>
       <div class="quiz-nav">
-        <button class="quiz-prev-btn" onclick="prevStep(1)">← Back</button>
-        <button class="quiz-next" onclick="nextStep(3)">Continue →</button>
+        <button class="quiz-prev-btn" onclick="goPrev(1)">← Back</button>
+        <button class="quiz-next" onclick="goNext(3, 'location', answers.location)">Continue →</button>
       </div>
     </div>
 
     <div class="quiz-step" id="step3">
       <div class="quiz-step-num">Question 3 of 5</div>
-      <h2>What's your current immigration status?</h2>
-      <div class="option-grid">
-        <button class="option-btn" onclick="select(this,'status','Undocumented')"><span class="opt-icon">📄</span>Undocumented</button>
-        <button class="option-btn" onclick="select(this,'status','DACA Recipient')"><span class="opt-icon">🛡️</span>DACA Recipient</button>
-        <button class="option-btn" onclick="select(this,'status','TPS Holder')"><span class="opt-icon">🌐</span>TPS Holder</button>
-        <button class="option-btn" onclick="select(this,'status','Prefer Not to Say')"><span class="opt-icon">🔒</span>Prefer Not to Say</button>
+      <h2>What is your current immigration status?</h2>
+      <div class="select-wrapper">
+        <select class="quiz-select" id="statusSelect" onchange="answers.status = this.value">
+          <option value="" disabled selected>Select status…</option>
+          <option value="DACA Recipient">DACA Recipient</option>
+          <option value="TPS Holder">TPS Holder</option>
+          <option value="Undocumented (No Status)">Undocumented</option>
+          <option value="Mixed Status Family">Mixed Status Family</option>
+          <option value="Pending Application">Pending Application</option>
+          <option value="Prefer Not to Say">Prefer Not to Say</option>
+        </select>
+        <span class="select-arrow">▾</span>
       </div>
       <div class="quiz-nav">
-        <button class="quiz-prev-btn" onclick="prevStep(2)">← Back</button>
-        <button class="quiz-next" onclick="nextStep(4)">Continue →</button>
+        <button class="quiz-prev-btn" onclick="goPrev(2)">← Back</button>
+        <button class="quiz-next" onclick="goNext(4, 'status', answers.status)">Continue →</button>
       </div>
     </div>
 
     <div class="quiz-step" id="step4">
       <div class="quiz-step-num">Question 4 of 5</div>
-      <h2>Where are you in your journey?</h2>
-      <div class="option-grid">
-        <button class="option-btn" onclick="select(this,'stage','High School')"><span class="opt-icon">🏫</span>High School</button>
-        <button class="option-btn" onclick="select(this,'stage','Undergraduate')"><span class="opt-icon">📖</span>Undergrad</button>
-        <button class="option-btn" onclick="select(this,'stage','Recent Graduate')"><span class="opt-icon">✨</span>Recent Grad</button>
+      <h2>Where are you in your professional journey?</h2>
+      <div class="select-wrapper">
+        <select class="quiz-select" id="stageSelect" onchange="answers.stage = this.value">
+          <option value="" disabled selected>Select your stage…</option>
+          <option value="High School">High School Student</option>
+          <option value="Undergrad">Undergrad Student</option>
+          <option value="Graduate">Graduate / Post-Grad</option>
+          <option value="Early Career">Early Career (0–3 yrs)</option>
+          <option value="Career Change">Career Change</option>
+          <option value="Entrepreneur">Starting a Business</option>
+        </select>
+        <span class="select-arrow">▾</span>
       </div>
       <div class="quiz-nav">
-        <button class="quiz-prev-btn" onclick="prevStep(3)">← Back</button>
-        <button class="quiz-next" onclick="nextStep(5)">Continue →</button>
+        <button class="quiz-prev-btn" onclick="goPrev(3)">← Back</button>
+        <button class="quiz-next" onclick="goNext(5, 'stage', answers.stage)">Continue →</button>
       </div>
     </div>
 
@@ -266,49 +245,43 @@
       <div class="quiz-step-num">Question 5 of 5</div>
       <h2>What are you looking for?</h2>
       <div class="option-grid">
-        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Scholarships')"><span class="opt-icon">💰</span>Scholarships</button>
-        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Internships')"><span class="opt-icon">🏢</span>Internships</button>
-        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Mentorship')"><span class="opt-icon">🤝</span>Mentorship</button>
-        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Legal Aid')"><span class="opt-icon">⚖️</span>Legal Aid</button>
+        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Scholarships')">🎓 Scholarships</button>
+        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Internships')">💼 Internships</button>
+        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Legal Aid')">⚖️ Legal Aid</button>
+        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Mentorship')">🤝 Mentorship</button>
+        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Work Authorization')">📄 Work Authorization</button>
+        <button class="option-btn multi" onclick="toggleMulti(this,'goals','Financial Aid')">💰 Financial Aid</button>
       </div>
       <div class="quiz-nav">
-        <button class="quiz-prev-btn" onclick="prevStep(4)">← Back</button>
-        <button class="quiz-next" onclick="showResults()" style="background:#C9724F">See Results ✦</button>
+        <button class="quiz-prev-btn" onclick="goPrev(4)">← Back</button>
+        <button class="quiz-next" onclick="showResults()">See Results ✦</button>
       </div>
     </div>
   </div>
 </div>
 
 <div id="results-page">
+  <div class="results-header-bar">
+    <div class="results-header-content">
+      <h2 id="results-heading">Your Personalized Roadmap</h2>
+      <p>A curated list of resources based on your professional profile and goals.</p>
+    </div>
+  </div>
+  
   <div class="results-container">
-    <div class="results-hero">
-      <div class="greeting">✦ Your Personalized Resources</div>
-      <h2 id="results-heading">Here's what we found.</h2>
-      <p id="results-subheading">Based on your situation.</p>
-      <div class="results-tags" id="results-tags"></div>
+    <div id="user-profile-summary" class="profile-summary-card"></div>
+    
+    <div class="results-section-title">
+      <h3>Recommended Opportunities</h3>
+      <div class="title-accent"></div>
     </div>
+    
+    <div class="results-cards" id="scholarships-cards"></div>
 
-    <div id="scholarships-section" style="margin-bottom:3rem">
-      <div class="results-section-title"><span class="icon">💰</span> Scholarships</div>
-      <div class="results-cards" id="scholarships-cards"></div>
+    <div class="results-actions">
+      <button class="btn-home" onclick="showMain()">← Back to Home</button>
+      <button class="restart-btn" onclick="restart()">Update Profile / Start Over</button>
     </div>
-
-    <div id="internships-section" style="margin-bottom:3rem">
-      <div class="results-section-title"><span class="icon">🏢</span> Internships</div>
-      <div class="results-cards" id="internships-cards"></div>
-    </div>
-
-    <div id="mentors-section" style="margin-bottom:3rem">
-      <div class="results-section-title"><span class="icon">🤝</span> Mentors</div>
-      <div class="results-cards" id="mentors-cards"></div>
-    </div>
-
-    <div id="legal-section" style="margin-bottom:3rem">
-      <div class="results-section-title"><span class="icon">⚖️</span> Legal Aid</div>
-      <div id="legal-cards"></div>
-    </div>
-
-    <button class="restart-btn" onclick="restart()">← New Search</button>
   </div>
 </div>
 
